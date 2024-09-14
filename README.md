@@ -28,14 +28,14 @@ docker run -d --name mongo-container -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAM
 
 ## Evidencias quais metodos HTTP:
 
-- **GE0T**
+- **GET**
 
 ![alt text](images/GET.png)
 
 - **POST**
 
-![alt text](images/POSTpng)
+![alt text](images/POST.png)
 
 - **PUT**
 
-![alt text](images/PUTpng)
+![alt text](images/PUT.png)
