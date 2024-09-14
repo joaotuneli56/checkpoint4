@@ -1,20 +1,20 @@
 const express = require('express');
-const app = express()
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+const mongoose = require('mongoose');
+const productRoutes = require('./routes/productRoutes');
 
-const mongoose = require ('mongoose')
-mongoose.connect('mongodb://localhost:27017/mydatabase')
+const app = express();
 
-//registrar os models
-require('./models/produto')
+app.use(express.json());
 
-//criar rotas
-const index = require('./routes/index')
-app.use('/', index)
+mongoose.connect('mongodb://localhost:27017/gerenciamento-produtos', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+})
+.then(() => console.log('Conectado ao MongoDB'))
+.catch((error) => console.error('Erro de conexão ao MongoDB:', error));
 
-// criar rota para produto
-const produtoRouter = require('./routes/produto-route')
-app.use('/produto', produtoRouter)
+app.use('/api/produtos', productRoutes);
 
-module.exports = app;
+app.listen(3000, () => {
+    console.log('Servidor rodando na porta 3000');
+});

@@ -1,21 +1,17 @@
 {
-  "name": "servico-atendimento",
+  "name": "gerenciamento-produto",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./bin/server.js"
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "dependencies": {
-    "debug": "^4.3.6",
-    "express": "^4.19.2",
+    "express": "^4.21.0",
     "mongoose": "^8.6.2"
-  },
-  "bin": {
-    "servico-atendimento": "bin/server.js"
-  },
-  "description": ""
+  }
 }
